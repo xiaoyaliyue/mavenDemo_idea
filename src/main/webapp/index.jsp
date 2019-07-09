@@ -15,6 +15,8 @@
     <input name="name">
     return:${name}
     <input value="提交" type="submit">
+    <input value="some-feature commit" type="submit">
+
 </form>
 
 </body>

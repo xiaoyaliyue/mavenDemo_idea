@@ -16,6 +16,7 @@
     return:${name}
     <input value="提交" type="submit">
     <input value="some-feature commit" type="submit">
+    <input value="releae-1.0.0 commit" type="submit">
 
 </form>
 

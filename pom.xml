@@ -51,6 +51,24 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <version>1.0-m3</version>
+                <configuration>
+                    <!-- see goals wiki page for configuration options -->
+                    <flowInitContext>
+                        <masterBranchName>master</masterBranchName>
+                        <developBranchName>develop</developBranchName>
+                        <featureBranchPrefix>feature-</featureBranchPrefix>
+                        <releaseBranchPrefix>release-</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+                        <versionTagPrefix>loan-</versionTagPrefix>
+                    </flowInitContext>
+                    <!--<username>826365976@qq.com</username>-->
+                    <!--<password>826365976yue</password>-->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

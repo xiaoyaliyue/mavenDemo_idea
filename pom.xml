@@ -5,7 +5,7 @@
     <groupId>com.anbang</groupId>
 
     <artifactId>mavenDemo_idea</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <packaging>war</packaging>
     <dependencies>
     <!-- 解决编译时，报程序包javax.servlet不存在的错误 -->
@@ -54,6 +54,16 @@
                 <artifactId>jgitflow-maven-plugin</artifactId>
                 <version>1.0-m5.1</version>
                 <configuration>
+                    <localOnly>false</localOnly>
+                    <pushFeatures>true</pushFeatures><!--是否在feature start 之后将feature分支推送到远程仓库-->
+                    <pushReleases>true</pushReleases><!--是否在release start 之后将feature分支推送到远程仓库-->
+                    <pushHotfixes>true</pushHotfixes><!--是否在hotfix start 之后将feature分支推送到远程仓库-->
+                    <squash>false</squash>
+                    <allowSnapshots>true</allowSnapshots>
+                    <goals>clean</goals>
+                    <noHotfixBuild>true</noHotfixBuild><!--是否在feature期间build项目-->
+                    <noFeatureBuild>true</noFeatureBuild>
+                    <noReleaseBuild>true</noReleaseBuild>
                     <!-- see goals wiki page for configuration options -->
                     <flowInitContext>
                         <masterBranchName>master</masterBranchName>
@@ -63,8 +73,14 @@
                         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
                         <versionTagPrefix>loan-</versionTagPrefix>
                     </flowInitContext>
-                    <!--<username>826365976@qq.com</username>-->
-                    <!--<password>826365976yue</password>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <!--版本号管理插件-->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
                 </configuration>
             </plugin>
         </plugins>

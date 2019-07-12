@@ -73,6 +73,9 @@
                         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
                         <versionTagPrefix>loan-</versionTagPrefix>
                     </flowInitContext>
+                    <username>name@9188.com</username>
+                    <password>yourpassword</password>
+
                 </configuration>
             </plugin>
             <plugin>

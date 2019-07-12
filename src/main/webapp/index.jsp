@@ -18,6 +18,8 @@
     <input value="some-feature commit" type="submit">
     <input value="releae-1.0.0 commit" type="submit">
     <input value="bug-1 commit" type="submit">
+    <input value="feature-1feature1" type="submit">
+
 
 </form>
 

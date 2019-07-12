@@ -21,6 +21,7 @@
     <input value="feature-1feature1" type="submit">
     <input value="first jgit-flow:myfeature" type="submit">
     <input value="first jgit-flow:myfeature-1.0" type="submit">
+    <input value="first jgit-flow:hotfix-1.1.1" type="submit">
 
 
 </form>

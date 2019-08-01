@@ -5,7 +5,7 @@
     <groupId>com.anbang</groupId>
 
     <artifactId>mavenDemo_idea</artifactId>
-    <version>1.6-SNAPSHOT</version>
+    <version>1.7-SNAPSHOT</version>
     <packaging>war</packaging>
     <dependencies>
     <!-- 解决编译时，报程序包javax.servlet不存在的错误 -->

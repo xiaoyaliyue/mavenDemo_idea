@@ -8,8 +8,8 @@
 ##--开始部署
 
 #!/bin/bash  
-ssh -t -t root@47.112.139.67
-
+ssh  root@47.112.139.67:/home/work/deploy.sh
+ssh -p 10022 root@47.112.139.67 "cd /home/work/;sh -x ./deploy.sh 
 echo "hello"
 
 

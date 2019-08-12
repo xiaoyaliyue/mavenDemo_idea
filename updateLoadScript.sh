@@ -9,28 +9,30 @@ echo "上传文件成功"
 #!/bin/bash  
 ssh root@192.168.0.23   << remotessh  
 
---项目war包名称
+--项目war包名称 mavenDemo_idea-1.6.war
 project_name=$1
---项目部署目录
+--项目部署目录 /home/work/apache-tomcat-7.0.79/webapps/
 project_dir=$2
---上传包临时存放目录
+--上传包临时存放目录:/home/work/deploy
 deploy_dir=$3
 --程序备份目录
-backup_dir=$4
---tomcat
+backup_dir=/home/work/backup
+--tomcat  /home/work/apache-tomcat-7.0.79
 tomcat_name=$5
 
-WebUrl=$6
+
+--页面访问地址：http://47.112.139.67:8080/mavenDemo_idea-1.6
+WebUrl=$6  
 
 
 --Tomcat启动脚本
 tomcatStart_shell=$tomcat_name/bin/startup.sh
 
 --1备份
-  if [ -d $backup_dir/$project_name ] ;then
-  echo "$backup_dir/$project_name目录存在，开始备份"
+  if [ -d $backup_dir ] ;then
+  echo "$backup_dir目录存在，开始备份"
   else 
-mkdir $backup_dir/$project_name
+mkdir $backup_dir
    fi
    cp -r $project_dir/$project_name $backup_dir/$project_name_'date +%Y%m%d'
 
@@ -63,7 +65,7 @@ done
 fi
 echo "开始解压部署程序包"
 rm -rf $project_dir/$project_name
-tar -zxvf $deploy_dir/$project_name -C $project_dir/$project_name
+\cp -rf $deploy_dir/$project_name -C $project_dir
 if [$?==0]
 then
 echo "解压部署包$deploy_dir/$project_name到$project_dir/$project_name成功"

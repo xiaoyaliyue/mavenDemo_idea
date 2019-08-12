@@ -1,34 +1,34 @@
---连接服务器，上传文件
+##--连接服务器，上传文件
 echo "开始上传文件"
 pscp -l work -pw qazwsx@123 -r C:\Users\tiger\.jenkins\workspace\pipelineDemo_deploy\target\mavenDemo_idea-1.6.war work@47.112.139.67:/home/work/apache-tomcat-7.0.79/webapps
 echo "上传文件成功"
 
 
---开始部署
+##--开始部署
 
 #!/bin/bash  
-ssh root@192.168.0.23   << remotessh  
+ssh work@47.112.139.67   << remotessh  
 
---项目war包名称 mavenDemo_idea-1.6.war
+##--项目war包名称 mavenDemo_idea-1.6.war
 project_name=$1
---项目部署目录 /home/work/apache-tomcat-7.0.79/webapps/
+##--项目部署目录 /home/work/apache-tomcat-7.0.79/webapps/
 project_dir=$2
---上传包临时存放目录:/home/work/deploy
+##--上传包临时存放目录:/home/work/deploy
 deploy_dir=$3
---程序备份目录
+##--程序备份目录
 backup_dir=/home/work/backup
---tomcat  /home/work/apache-tomcat-7.0.79
+##--tomcat  /home/work/apache-tomcat-7.0.79
 tomcat_name=$5
 
 
---页面访问地址：http://47.112.139.67:8080/mavenDemo_idea-1.6
+##--页面访问地址：http://47.112.139.67:8080/mavenDemo_idea-1.6
 WebUrl=$6  
 
 
---Tomcat启动脚本
+##--Tomcat启动脚本
 tomcatStart_shell=$tomcat_name/bin/startup.sh
 
---1备份
+##--1备份
   if [ -d $backup_dir ] ;then
   echo "$backup_dir目录存在，开始备份"
   else 
@@ -38,7 +38,7 @@ mkdir $backup_dir
 
 
 
---2杀进程
+##--2杀进程
 PID=$(ps -ef | grep $tomcat_name | grep java | grep -v grep | awk '{ print $2 }')
 if [ -z "$PID"];then
 echo "$SERVICE_NAME进程不存在，无需关闭进程，开始备份部署........"

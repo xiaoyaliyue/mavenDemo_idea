@@ -49,7 +49,7 @@ kill -9 $PID
 echo “等待10秒”
 sleep 10；
 echo “完成停进程，开始检查进程状态”
-for i in (1..10)
+for i in {1..10}
 do
 echo "开始第$i/10次检查"
 count_PID=$(ps -ef|grep $PID |grep -v "grep" |wc -l )

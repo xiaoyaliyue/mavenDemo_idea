@@ -8,7 +8,7 @@
 ##--开始部署
 
 #!/bin/bash  
-ssh root@47.112.139.67
+ssh -t -t root@47.112.139.67
 
 ##--项目war包名称 mavenDemo_idea-1.6.war
 project_name=$1

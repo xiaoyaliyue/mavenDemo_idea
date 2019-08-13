@@ -4,7 +4,7 @@ echo "start scp war to linux"
 scp -r C:/Users/tiger/.jenkins/workspace/pipelineDemo_deploy/target/mavenDemo_idea-1.6.war root@47.112.139.67:/home/work/deploy
 
 echo "scp war to linux ok "
-ssh root@47.112.139.67
+ssh -tt root@47.112.139.67
 ##--项目war包名称 mavenDemo_idea-1.6.war
 project_name=mavenDemo_idea-1.6.war
 ##--项目部署目录 /home/work/apache-tomcat-7.0.79/webapps/

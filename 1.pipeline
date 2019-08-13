@@ -1,0 +1,27 @@
+node {
+   def mvnHome
+   stage('Preparation') { // for display purposes
+      // Get some code from a GitHub repository
+      // git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+     git 'https://github.com/xiaoyaliyue/mavenDemo_idea.git'
+      // Get the Maven tool.
+      // ** NOTE: This 'maven_3.5.4' Maven tool must be configured
+      // **       in the global configuration.           
+      //mvnHome = tool 'maven_3.5.4'
+   }
+    stage('Build') {
+       bat(/mvn clean package /)
+      }
+      
+    stage('upload') {
+       bat(/upload.bat /)
+      }
+      
+   stage('deploy') {
+       bat(/bash.exe updateLoadScript.sh /)
+      }
+   //stage('Results') {
+     // junit '**/target/surefire-reports/TEST-*.xml'
+     // archiveArtifacts 'target/*.war'
+  // }
+}

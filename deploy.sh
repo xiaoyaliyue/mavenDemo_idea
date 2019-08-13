@@ -79,7 +79,7 @@ if [ -z "$WebUrl" ];
 	echo "无登录地址，无法检测页面是否正常"
 else
 		#TomcatServiceCode=$(curl -L -s -o -m 20 --connect-timeout 20  -w%{http_code} $WebUrl | sed '/^$/!h;$!d;g' | grep -o '[0-9]\{3\}' | awk 'END {print}' )
-	TomcatServiceCode=$(curl -L -s -o -m 20 --connect-timeout 20  -w%{http_code} http://47.112.139.67:8080/mavenDemo_idea-1.6 | sed '/^$/!h;$!d;g' | grep -o '[0-9]\{3\}' | awk 'END {print}' )
+	TomcatServiceCode=$(curl -L -s -o -m 20 --connect-timeout 20  -w%{http_code} $WebUrl | sed '/^$/!h;$!d;g' | grep -o '[0-9]\{3\}' | awk 'END {print}' )
 	echo "check url:$TomcatServiceCode"
 	if [ $TomcatServiceCode -eq 200 ]
 	then

@@ -1,7 +1,8 @@
 #!/bin/bash  
 
 echo "start scp war to linux"
-scp -r C:\Users\tiger\.jenkins\workspace\pipelineDemo_deploy\target\mavenDemo_idea-1.6.war root@47.112.139.67:/home/work/deploy
+scp -r C:/Users/tiger/.jenkins/workspace/pipelineDemo_deploy/target/mavenDemo_idea-1.6.war root@47.112.139.67:/home/work/deploy
+
 echo "scp war to linux ok "
 
 ##--项目war包名称 mavenDemo_idea-1.6.war

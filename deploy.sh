@@ -11,7 +11,7 @@ backup_dir=/home/work/backup
 ##--tomcat  /home/work/apache-tomcat-7.0.79
 tomcat_name=/home/work/apache-tomcat-7.0.79
 
-
+nowDate='date +%Y%m%d%H%M%S'
 ##--页面访问地址：http://47.112.139.67:8080/mavenDemo_idea-1.6
 WebUrl=http://47.112.139.67:8080/mavenDemo_idea-1.6
 
@@ -26,8 +26,12 @@ tomcatStart_shell=$tomcat_name/bin/startup.sh
   else 
   mkdir $backup_dir
    fi
-   ##cp -r $project_dir/$project_name $backup_dir/$project_name_$(date +%Y%m%d_%H%M%S)
-
+    #cp -r /home/work/apache-tomcat-7.0.79/webapps/mavenDemo_idea-1.6.war /home/work/backup/mavenDemo_idea-1.6.war_$(date +%Y%m%d_%H%M%S)
+	echo "1"
+   #cp -r ${project_dir}/${project_name} ${backup_dir}/${project_name}-$(date +%Y%m%d_%H%M%S)
+	
+   cp -r $project_dir/$project_name $backup_dir/$project_name-$(date +%Y%m%d_%H%M%S)
+	
 
 ##--2  kill pid
 	PID=$(ps -ef | grep $tomcat_name | grep java | grep -v grep | awk '{ print $2 }')

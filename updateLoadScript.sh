@@ -9,7 +9,8 @@
 
 #!/bin/bash  
 
-ssh -p 10022 root@47.112.139.67 "cd /home/work/;sh -x ./deploy.sh 
+#ssh -p 10022 root@47.112.139.67 "cd /home/work/;sh -x ./deploy.sh 
+ssh root@47.112.139.67  'cd /home/work;sh deploy.sh'
 echo "hello"
 
 
